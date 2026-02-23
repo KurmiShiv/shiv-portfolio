@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Gradient Background */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f766e, #115e59);
+    padding-bottom: 80px;
+    position: relative;
+}
+
+/* Hero content spacing */
+.hero-content {
+    margin-top: 120px;
+}
+
+/* Circular Image Styling */
+.image-wrapper {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #ffffff33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+
+/* Ring effect */
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Profile image */
+.profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-img {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
